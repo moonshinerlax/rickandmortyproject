@@ -1,0 +1,10 @@
+.container{
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 50VW;
+}
+
+.select{
+    width: 20%;
+    height: 25px;   
+}

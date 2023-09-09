@@ -1,0 +1,26 @@
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  background-image: url("C:\Users\Aiven\Documents\Projecto Integrador\RickandMortyApp\IvanRickandMorty\src\img\fictional-planet-with-colourful-night-sky-stars-nebula.jpg");    
+   background-size:cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center center;
+   min-height: 100vh;
+   margin: 0px;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

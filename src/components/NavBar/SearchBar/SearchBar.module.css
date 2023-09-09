@@ -1,0 +1,132 @@
+.container {
+    width: 200px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-content: center;
+  }
+   
+       .search {
+        position:absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        background: rgb(31, 255, 1);
+        background-position: center;
+        background-position-x: -35px; 
+        background-size: 250%;
+        border-radius: 50%;
+        transition: all .5s;
+        z-index: 4;
+        box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 25px 0 rgb(31, 255, 1);
+      }
+        .search:hover {
+          cursor: pointer;
+        }
+        
+        .search:before {
+          content: "";
+          position: absolute;
+          margin: auto;
+          top: 22px;
+          right: 0;
+          bottom: 0;
+          left: 22px;
+          width: 15px;
+          height: 7px;
+          border-radius: 30%;
+          background: rgb(0, 0, 0);
+          transform: rotate(45deg);
+          transition: all .75s;
+        }
+        .search:after {
+          content: "";
+          position: absolute;
+          margin: auto;
+          top: -5px;
+          right: 0;
+          bottom: 0;
+          left: -5px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          border: 4px solid rgb(0, 0, 0);
+          transition: all .5s;
+      }
+      
+      
+      .input {
+        font-family: 'Inconsolata', monospace;
+        font-size: larger;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        background:white;
+        color: black;
+        text-shadow: 0 0 10px rgb(31, 255, 1);
+        padding: 0 80px 0 20px;
+        border-radius: 30px;
+        box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 25px 0 rgb(31, 255, 1);
+        transition: all 1s;
+        opacity: 0;
+        z-index: 5;
+        font-weight: bolder;
+        letter-spacing: 0.1em;
+        text-align: right;
+        direction: rtl;
+      }
+        .input:hover {
+          cursor: pointer;
+        }
+        .input:focus,
+        .input.focus,
+        .input.active {
+          height: 40px;
+          width: 150px;
+          opacity: 1;
+          cursor: text; 
+        } 
+        .input:focus ~ .search,
+        .input.active ~ .search,
+        .input.focus ~ .search {
+          right: -150px;
+          background: #151515;
+          z-index: 6;
+  
+          &::before {
+            top: 0;
+            left: 0;
+            height: 2px;
+            transform: translate(-140px,0) rotate(90deg);
+            background-color: rgba(255, 255, 255, 0.514);
+          }
+          &::after {
+            top: 0;
+            border: 5px solid; 
+            background: linear-gradient(#151515, #151515) padding-box,
+                linear-gradient(-0deg, rgba(31,255,1,1) 0%,rgba(0,0,0,0)80%, rgba(0,0,0,0)100%) border-box;
+            width: 110px;
+            height: 18px;
+            transform: rotate(45deg) translate(-17px,18px);
+            border-image: linear-gradient(90deg, rgba(31,255,1,1) 0%, rgba(31,255,1,0.54) 51%, rgba(0,0,0,0) 100%);
+          }
+        }
+        .input:placeholder {
+          color: white;
+          opacity: 0.5;
+          font-weight: bolder;
+        }
