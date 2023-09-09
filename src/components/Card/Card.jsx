@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import style from './card.module.css'
 import { Link, useLocation } from "react-router-dom";

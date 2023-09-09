@@ -97,11 +97,11 @@ const showNavBar = location.pathname !== '/';
 
    return (
       <div className='App'>
-         {showNavBar && <Nav
-            onRandom={onRandom} 
-            onSearch={onSearch}
-            logOut={logOut}
-            />}
+            {showNavBar && <Nav
+               onRandom={onRandom} 
+               onSearch={onSearch}
+               logOut={logOut}
+               />}
    <Routes>
       <Route path={PATHROUTES.LOGIN} element={<Form login={login} />}/>
       <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/>
