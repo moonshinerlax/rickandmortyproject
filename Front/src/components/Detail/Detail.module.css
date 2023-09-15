@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "binxchr";
+    src: local("binxchr.ttf"),
+      url('C:\Users\Aiven\Documents\Projecto Integrador\RickandMortyApp\IvanRickandMorty\Front\src\fonts\binary\binxchr.ttf');
+  } 
+
+.container{
+    display: inline-flex;
+    margin: 55px;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.textContainer{
+    display: flex;
+    place-items: center;
+    grid-column: 2;
+    text-align: initial;
+    margin-left: 50px;
+    width: 500px;
+    flex-direction: column;
+    font-family: binxchr;
+    font-size: 40px;
+    color: aliceblue;
+    text-shadow: 2px 3px 30px rgb(247, 0, 255), 0 0 20px rgb(55, 0, 255);
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.img{
+    display: flex;
+    border-radius: 30%;
+    margin: 22px;
+    width: 20em;
+    height: 300px;
+    background-position: 452px;
+    background-position-y: -18px;
+    background-size: 642px;
+}
