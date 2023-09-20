@@ -48,7 +48,7 @@ function App() {
 
     function getRandomCharacter() {
       const randomId = Math.floor(Math.random() * 826) + 1;
-      return axios(`https://rickandmortyapi.com/api/character/${randomId}`)
+      return axios(`http://localhost:3001/rickandmorty/character/${randomId}`)
          .then(({ data }) => data)
          .catch((error) => {
             console.error("Error fetching random character:", error);
