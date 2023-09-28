@@ -1,23 +1,19 @@
 const axios = require('axios')
+const URL = "https://rickandmortyapi.com/api/character/"
 
-function getCharByID (res, id) {
+function getCharByID (req, res) {
+    const {id} = req.params
     axios
-        .get(`https://rickandmortyapi.com/api/character/${id}`)
+        .get(URL+id)
         .then((response) => {
+            const id = req.params.id
             const char = response.data;
-            if (!id) {
-                res.writeHead(404, { 'content-type': 'text/plain' });
-                res.end("Error message: 'ponle un id we'");
-            } else if (char.id.toString() === id) {
-                res.writeHead(200, { 'content-type': 'application/json' });
-                res.end(JSON.stringify(char));
+            if (char.id === Number(id)) {
+                const {id, name, status, species, origin, image, gender} = char
+                res.status(200)
+                res.json({id, status, name, species, origin, image,gender})
               }
           })
-          .catch((error) => {
-            console.error(error.response.data);
-            res.writeHead(500, { 'content-type': 'text/plain' });
-            res.end(`Internal server error: ${error.response.data.error}`);
-          });
       }
 
-module.exports = { getCharByID };
+module.exports = getCharByID;

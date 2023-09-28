@@ -58,7 +58,7 @@ class Favorites extends Component {
                status={character.status}
                species={character.species}
                gender={character.gender}
-               origin={character.origin.name}
+               origin={character.origin}
                image={character.image}
     //! Observacion, en class component se pasa la referencia de una funcion y no la ejecucion o resultado de tal.
             //    onClose={()=>this.handleCloseFav(character.id)}
