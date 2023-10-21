@@ -1,26 +1,27 @@
 /* eslint-disable no-case-declarations */
 import { ADD_FAV, FILTER, ORDER, REMOVE_FAV } from "./actions";
 
-const initalState = {
-    myFavorites: [],
-    allCharacters: [],
-    characterDetail: {}
-}
 
-const reducer = (state = initalState, action) => {
+const initialState = {
+  myFavorites: [],
+  allCharacters: [],
+  characterDetail: {}
+};
+
+const rootReducer = (state = initialState, action) => {
     switch(action.type){
         // case ADD_FAV:
         //     return {...state, 
         //         allCharacters: [...state.allCharacters, action.payload],
         //         myFavorites: [...state.myFavorites, action.payload]}
-        case 'ADD_FAV':
+        case ADD_FAV:
       return { ...state, myFavorites: action.payload, allCharacters: action.payload };
         // case REMOVE_FAV:
         //     return {...state, myFavorites: state.myFavorites.filter(
         //         (char) => char.id !== action.payload), allCharacters: state.myFavorites.filter(
         //             (char) => char.id !== action.payload),
         //     }
-        case 'REMOVE_FAV':
+        case REMOVE_FAV:
       return { ...state, myFavorites: action.payload, allCharacters: action.payload };
         case FILTER:
                 // eslint-disable-next-line no-case-declarations
@@ -53,4 +54,4 @@ const reducer = (state = initalState, action) => {
     }
 }
 
-export default reducer;
+export default rootReducer;

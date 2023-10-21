@@ -12,7 +12,6 @@ import Cards from './components/Cards/Cards'
 import Favorites from './components/Favorites/Favorites'
 import Detail from './components/Detail/Detail'
 import About from './views/About.view'
-// import LogIn from './views/LogIn.view'
 import Form from './components/Forms/Form'
 
 function App() {
@@ -26,17 +25,27 @@ function App() {
    !access && navigate('/');
 }, [access]);
 
+async function register(userData) {
+   const URL = 'http://localhost:3001/rickandmorty/login';
+   try {
+      const {data} = await axios.post(URL, userData)
+      return window.alert("User Created Sucessfully" + data)
+   } catch (error) {
+      console.log(error)
+      window.alert(error.response.data.error)
+   }
+}
+
 async function login(userData) {
    const { email, password } = userData;
-   const URL = 'http://localhost:3001/rickandmorty/login/';
+   const URL = 'http://localhost:3001/rickandmorty/login';
    try {
       const {data} = await axios(URL + `?email=${email}&password=${password}`)
          const { access } = data;
          setAccess(data);
-         if(access) {navigate('/home')}
-         else throw new Error('User and/or Password are wrong or User doesn\'t exist')   
+         if(access) {navigate('/home')}   
    } catch (error) {
-      window.alert(error.message)
+      window.alert(error.response.data.message);
    }
    
 }
@@ -110,7 +119,7 @@ const showNavBar = location.pathname !== '/';
                logOut={logOut}
                />}
    <Routes>
-      <Route path={PATHROUTES.LOGIN} element={<Form login={login} />}/>
+      <Route path={PATHROUTES.LOGIN} element={<Form login={login} register={register} />}/>
       <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/>
       <Route path={PATHROUTES.ABOUT} element={<About/>}/>
       <Route path={PATHROUTES.DETAIL} element={<Detail />}/>

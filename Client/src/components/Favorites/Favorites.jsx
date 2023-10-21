@@ -28,7 +28,6 @@ class Favorites extends Component {
         } else { 
             this.setState({aux: false})
         }
-        console.log(this.state.aux)
     }
 
     //! mi error era que estaba haciendo el map del objeto State (this.props.map) y lo correcto es
@@ -50,16 +49,16 @@ class Favorites extends Component {
                 </select>
             </div>
             <div className={style.container}>
-            {this.props.myFavorites.map((character) => 
+            {this.props.myFavorites.map((char) => 
                <Card
-               id={character.id}
-               key={character.id}
-               name={character.name}
-               status={character.status}
-               species={character.species}
-               gender={character.gender}
-               origin={character.origin}
-               image={character.image}
+               id={char.id}
+               key={char.id}
+               name={char.name}
+               status={char.status}
+               species={char.species}
+               gender={char.gender}
+               origin={char.origin}
+               image={char.image}
     //! Observacion, en class component se pasa la referencia de una funcion y no la ejecucion o resultado de tal.
             //    onClose={()=>this.handleCloseFav(character.id)}
                />

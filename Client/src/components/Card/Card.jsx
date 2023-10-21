@@ -56,7 +56,3 @@ export default function Card(props) {
           
    )
 }
-
-// const mapDispatchtoProps = (state) => {
-
-// }

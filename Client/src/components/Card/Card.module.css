@@ -152,13 +152,13 @@ justify-self: center;
 @font-face {
 font-family: "Alien Invader";
 src: local("Alien Invader"),
-  url('C:\Users\Aiven\Documents\Projecto Integrador\RickandMortyApp\IvanRickandMorty\Front\src\fonts\alien_invader\Alien Invader.ttf');
+  url('C:\Users\Aiven\Documents\Projecto Integrador\RickandMortyApp\IvanRickandMorty\Client\src\fonts\alien_invader\Alien Invader.ttf');
 font-weight: bold;
 }    
 @font-face {
 font-family: "Space";
 src: local("Spac3 Slim_ttf_free.ttf"),
-  url('C:\Users\Aiven\Documents\Projecto Integrador\RickandMortyApp\IvanRickandMorty\Front\src\fonts\spac3\Spac3 Slim_ttf_free.ttf');
+  url('C:\Users\Aiven\Documents\Projecto Integrador\RickandMortyApp\IvanRickandMorty\Client\src\fonts\spac3\Spac3 Slim_ttf_free.ttf');
 }    
 
 .status{

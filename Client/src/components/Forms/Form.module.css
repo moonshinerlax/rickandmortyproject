@@ -35,6 +35,17 @@
     text-shadow: 0 0 10px aqua, 0 0 10px aqua;
     font-family: Space;
 }
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonContainerSubmit{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .button{
     margin-top: 20px;
     border-radius: 9999px;
