@@ -16,7 +16,7 @@ import Form from './components/Forms/Form'
 
 function App() {
   const [characters, setCharacters] = useState([])
-
+console.log(characters)
 //   !...............Logic for LogIn and LogOut.....................................
   const [access, setAccess] = useState(false)
   const navigate = useNavigate();

@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../../redux/actions';
 
+
 export default function Card(props) {
       const myFavorites = useSelector((state) => state.myFavorites)
       const {id, name, status, species, gender, origin, image, onClose} = props
@@ -14,7 +15,7 @@ export default function Card(props) {
 
       useEffect(() => {
             myFavorites.forEach((fav) => {
-               if (fav.id === props.id) {
+               if (Number(fav.id) === Number(props.id)) {
                   setIsFav(true);
                }
             });
@@ -29,7 +30,7 @@ export default function Card(props) {
                    setIsFav(true);
                   dispatch(addFav(props))          
             }}
-      
+      console.log(isFav)
    return (
      
          <div className={style.container}>
